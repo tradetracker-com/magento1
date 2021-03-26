@@ -1,0 +1,15 @@
+# app/code
+app/code/community/TradeTracker/Connect            app/code/community/TradeTracker/Connect
+# app/etc
+app/etc/modules/TradeTracker_Connect.xml            app/etc/modules/TradeTracker_Connect.xml
+# app/locale
+app/locale/en_US/TradeTracker_Connect.csv            app/locale/en_US/TradeTracker_Connect.csv
+app/locale/nl_NL/TradeTracker_Connect.csv            app/locale/nl_NL/TradeTracker_Connect.csv
+# app/design
+app/design/frontend/base/default/layout/tradetracker_connect.xml            app/design/frontend/base/default/layout/tradetracker_connect.xml
+app/design/frontend/base/default/template/tradetracker/connect/conversionpixel.phtml            app/design/frontend/base/default/template/tradetracker/connect/conversionpixel.phtml
+app/design/adminhtml/default/default/layout/tradetracker_connect.xml            app/design/adminhtml/default/default/layout/tradetracker_connect.xml
+# skin
+skin/adminhtml/default/default/tradetracker/connect/style.css            skin/adminhtml/default/default/tradetracker/connect/style.css
+# shell
+shell/tradetracker.php            shell/tradetracker.php

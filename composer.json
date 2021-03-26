@@ -1,0 +1,14 @@
+{
+    "name": "tradetracker-com/magento1",
+    "type": "magento-module",
+    "description": "Magento 1 Tradetracker",
+    "homepage": "https://github.com/tradetracker-com/magento1",
+    "authors": [
+        {
+            "name": "TradeTracker"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    }
+}

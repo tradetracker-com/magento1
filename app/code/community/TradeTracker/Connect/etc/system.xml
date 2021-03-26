@@ -1,0 +1,874 @@
+<?xml version="1.0"?>
+<!--
+  ~  TradeTracker
+  ~
+  ~  NOTICE OF LICENSE
+  ~
+  ~  This source file is subject to the Open Software License (OSL 3.0)
+  ~  that is bundled with this package in the file LICENSE.txt.
+  ~  It is also available through the world-wide-web at this URL:
+  ~  http://opensource.org/licenses/osl-3.0.php
+  ~  If you did not receive a copy of the license and are unable to
+  ~  obtain it through the world-wide-web, please send an email
+  ~  to license@magentocommerce.com so we can send you a copy immediately.
+  ~
+  ~  @category    TradeTracker
+  ~  @package     TradeTracker_Connect
+  ~  @copyright   Copyright (c) 2021 TradeTracker (http://www.tradetracker.com)
+  ~  @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+  -->
+<config>
+    <tabs>
+        <tradetracker translate="label" module="tradetracker">
+            <label>TradeTracker</label>
+            <sort_order>210</sort_order>
+        </tradetracker>
+    </tabs>
+    <sections>
+        <tradetracker translate="label" module="tradetracker">
+            <label>TradeTracker Feed &amp; Pixel</label>
+            <tab>tradetracker</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>120</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label" module="tradetracker">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <version translate="label">
+                            <label>Extension Version</label>
+                            <frontend_type>label</frontend_type>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_version</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </version>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enabled>
+                    </fields>
+                </general>
+                <pixel translate="label" module="tradetracker">
+                    <label>Conversionpixel</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>3</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <note translate="label">
+                            <label><![CDATA[With the conversion pixel the extension is able to record the placed orders your shop. This makes it possible to position populair products better, this greatly enhances your conversion. In addition, you get better insights in the orders and the assigned commission.]]></label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_note</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </note>
+                        <exclude_heading translate="label">
+                            <label>Pixel Settings</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </exclude_heading>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <campaign_id translate="label">
+                            <label>Campaign ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </campaign_id>
+                        <product_id translate="label">
+                            <label>Product ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Product ID's are generated by TradeTracker and are used to select the profit margin per group. You can overwrite the default product ID on category level under Catalog » Manage Categories » Select Category » Feeds » TradeTracker Product ID.</comment>
+                        </product_id>
+                    </fields>
+                </pixel>
+                <data translate="label" module="tradetracker">
+                    <label>Product Data</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <note translate="label">
+                            <label><![CDATA[This section lists all the available attributes for the Feed. To avoid errors in the feed please make sure that you provide the most attributes.]]></label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_note</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </note>
+                        <heading_map translate="label">
+                            <label>General Fields</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_map>
+                        <name translate="label">
+                            <label>Name</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_name</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </name>
+                        <name_custom translate="label">
+                            <label>Custom Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <name>use_custom</name>
+                            </depends>
+                        </name_custom>
+                        <description translate="label">
+                            <label>Description</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_name</source_model>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </description>
+                        <description_custom translate="label">
+                            <label>Custom Description</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <description>use_custom</description>
+                            </depends>
+                        </description_custom>
+                        <images translate="label">
+                            <label>Images</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_images</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </images>
+                        <main_image translate="label">
+                            <label>Main image</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_mainimage</source_model>
+                            <sort_order>16</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <images>all</images>
+                            </depends>
+                        </main_image>
+                        <heading_map2 translate="label">
+                            <label>Additional Fields</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_map2>
+                        <ean translate="label">
+                            <label>EAN-code</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_textattribute</source_model>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ean>
+                        <brand translate="label">
+                            <label>Brand</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_attribute</source_model>
+                            <sort_order>22</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </brand>
+                        <color translate="label">
+                            <label>Color</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_attribute</source_model>
+                            <sort_order>23</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </color>
+                        <material translate="label">
+                            <label>Material</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_attribute</source_model>
+                            <sort_order>24</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </material>
+                        <size translate="label">
+                            <label>Size</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_attribute</source_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </size>
+                        <gender translate="label">
+                            <label>Gender</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_attribute</source_model>
+                            <sort_order>26</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </gender>
+                        <stock translate="label">
+                            <label>Send Stock</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>27</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </stock>
+                        <stock_limit translate="label">
+                            <label>Limit stock at</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>28</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <tooltip>Maximum quantity of stock to be sent, everything above this value will be sent as this limit</tooltip>
+                            <comment>Use 0 for no limit</comment>
+                            <depends>
+                                <stock>1</stock>
+                            </depends>
+                        </stock_limit>
+                        <extra_info translate="label">
+                            <label>Extra info</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>29</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Like eg: Free pickup from store</comment>
+                        </extra_info>
+                        <heading_category translate="label">
+                            <label>Category</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_category>
+                        <category_type translate="label">
+                            <label>Type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_categoryoption</source_model>
+                            <sort_order>32</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </category_type>
+                        <category_attribute translate="label">
+                            <label>Attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_attribute</source_model>
+                            <sort_order>33</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <category_type>attribute</category_type>
+                            </depends>
+                        </category_attribute>
+                        <default_category translate="label">
+                            <label>Use multiple attributes</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <category_type>attribute</category_type>
+                            </depends>
+                            <comment>Will be used on empty results</comment>
+                            <tooltip>Use the > symbol to separate the attributes and hide the attribute when empty.</tooltip>
+                        </default_category>
+                        <category_tradetracker_default translate="label">
+                            <label>Default Category</label>
+                            <frontend_type>select</frontend_type>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>36</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <category_type>custom</category_type>
+                            </depends>
+                            <tooltip>This category will be used when there is no TradeTracker category specified on category level.</tooltip>
+                        </category_tradetracker_default>
+                        <heading_map3 translate="label">
+                            <label>Delivery Time</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_map3>
+                        <delivery translate="label">
+                            <label>Type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_type</source_model>
+                            <sort_order>41</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </delivery>
+                        <delivery_att translate="label">
+                            <label>Attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_attribute</source_model>
+                            <sort_order>42</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <delivery>attribute</delivery>
+                            </depends>
+                        </delivery_att>
+                        <delivery_in translate="label">
+                            <label>Delivery Time - In Stock</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>42</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <delivery>fixed</delivery>
+                            </depends>
+                        </delivery_in>
+                        <delivery_out translate="label">
+                            <label>Delivery Time - Out of Stock</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>43</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <delivery>fixed</delivery>
+                            </depends>
+                        </delivery_out>
+                        <heading_shipping translate="label">
+                            <label>Shipping Price</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>44</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_shipping>
+                        <shipping_price>
+                            <label>Shipping Price</label>
+                            <frontend_model>tradetracker/adminhtml_config_form_field_shipping</frontend_model>
+                            <backend_model>tradetracker/adminhtml_system_config_backend_design_shipping</backend_model>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </shipping_price>
+                        <extra_heading translate="label">
+                            <label>Extra Fields</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </extra_heading>
+                        <extra_note translate="label">
+                            <label><![CDATA[You can add custom-fields to your feed when needed. Please make sure that your using the latest Custom Fields standards To prevent error messages in the feed. The guidelines for the custom-fields can be found right in our Knowledgebase.]]></label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_note</frontend_model>
+                            <sort_order>51</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </extra_note>
+                        <extra>
+                            <label>Extra Fields</label>
+                            <frontend_model>tradetracker/adminhtml_config_form_field_extra</frontend_model>
+                            <backend_model>tradetracker/adminhtml_system_config_backend_design_extra</backend_model>
+                            <sort_order>52</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </extra>
+                    </fields>
+                </data>
+                <advanced translate="label" module="tradetracker">
+                    <label>Advanced Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>6</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <tax_heading translate="label">
+                            <label>Tax Customization</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tax_heading>
+                        <tax_note translate="label">
+                            <label><![CDATA[By default prices are shown incl. Tax so only change this option if necessary.<br>If the feed export is without tax it's possible to add it with this option.<br>]]></label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_note</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tax_note>
+                        <force_tax translate="label">
+                            <label>Force Tax Usage</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_tax</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </force_tax>
+                        <add_tax translate="label">
+                            <label>Manually Add Tax</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </add_tax>
+                        <tax_percentage translate="label">
+                            <label>Percentage</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[When the tax percentage is 21% use 21.]]></comment>
+                            <depends>
+                                <add_tax>1</add_tax>
+                            </depends>
+                        </tax_percentage>
+                        <configurable_heading translate="label">
+                            <label>Configurable &amp; Grouped</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </configurable_heading>
+                        <configurable_note translate="label">
+                            <label><![CDATA[Export non visible simple products of configurable and grouped products.]]></label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_note</frontend_model>
+                            <sort_order>51</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </configurable_note>
+                        <conf_enabled translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>52</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </conf_enabled>
+                        <conf_fields translate="label">
+                            <label>Use Parent Data for Simple</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_configurable</source_model>
+                            <sort_order>53</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <conf_enabled>1</conf_enabled>
+                            </depends>
+                            <comment>Use parent data</comment>
+                        </conf_fields>
+                        <simple_price translate="label">
+                            <label>Use Simple Product Pricing</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>54</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <conf_enabled>1</conf_enabled>
+                            </depends>
+                            <comment>Only enable this option when you have enabled an extension that is using the simple prices in your store.</comment>
+                        </simple_price>
+                        <conf_switch_urls translate="label">
+                            <label>Configurable Switch Urls</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <conf_enabled>1</conf_enabled>
+                            </depends>
+                            <comment>Create a specific url for the simple products inside the configurable products to make sure the prices and information is correct when using the link.</comment>
+                        </conf_switch_urls>
+                        <grouped_price translate="label">
+                            <label>Grouped Price</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_pricemodel</source_model>
+                            <sort_order>56</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </grouped_price>
+                    </fields>
+                </advanced>
+                <filter translate="label" module="tradetracker">
+                    <label>Tradetracker - Filter Conditions</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>7</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <note translate="label">
+                            <label><![CDATA[This option allows you to include/exclude categories or out of stock products from the Tradetracker Feed. To exclude specific products from the Tradetracker feed you easily select yes in the Tradetracker tab on your product configuration page.<br>]]></label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_note</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </note>
+                        <category_heading translate="label">
+                            <label>Filter by Category</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </category_heading>
+                        <category_enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </category_enabled>
+                        <category_type translate="label">
+                            <label>Type of filter</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_categorytype</source_model>
+                            <sort_order>22</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <category_enabled>1</category_enabled>
+                            </depends>
+                        </category_type>
+                        <categories translate="label">
+                            <label>Category</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>tradetracker/adminhtml_system_config_source_category</source_model>
+                            <sort_order>23</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <category_enabled>1</category_enabled>
+                            </depends>
+                        </categories>
+                        <advanced_heading translate="label">
+                            <label>Advanced</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </advanced_heading>
+                        <advanced>
+                            <label>Advanced Filter</label>
+                            <frontend_model>tradetracker/adminhtml_config_form_field_filter</frontend_model>
+                            <backend_model>tradetracker/adminhtml_system_config_backend_design_filter</backend_model>
+                            <sort_order>42</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </advanced>
+                        <stock_heading translate="label">
+                            <label>Exclude Products on Stock level</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </stock_heading>
+                        <stock translate="label">
+                            <label>Exclude out of stock products</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>51</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </stock>
+                    </fields>
+                </filter>
+                <generate translate="label" module="tradetracker">
+                    <label>Generation Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>8</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <note translate="label">
+                            <label><![CDATA[Each store view will have their own feed, you can easily activate or de-activate the feed generation on store level or automatically generate the feed. In case your not using the cron job functionality it's possible to generate the feed manually.]]></label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_note</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </note>
+                        <exclude_heading translate="label">
+                            <label>Feed Generation</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </exclude_heading>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <filename translate="label">
+                            <label>Filename</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[tradetracker.xml]]></comment>
+                        </filename>
+                        <log_generation translate="label">
+                            <label>Save summary to log</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Write the summary of each feed generation to the var/log/tradetracker.log file</comment>
+                        </log_generation>
+                        <advanced_heading translate="label">
+                            <label>Advanced</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </advanced_heading>
+                        <paging translate="label">
+                            <label>Paging</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Recommend for big catalogs, e.g. catalogs of 50.000 SKU, use 5.000 per page.]]></comment>
+                        </paging>
+                        <limit translate="label">
+                            <label>Limit per Page</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>22</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <paging>1</paging>
+                            </depends>
+                            <comment><![CDATA[Use the paging function on big catalogs, e.g. catalogs of 50.000 SKU, you can use 5.000 per page.]]></comment>
+                        </limit>
+                        <debug_memory translate="label">
+                            <label>Debug Memory Usage</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>23</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <paging>1</paging>
+                            </depends>
+                            <comment>Write the memory usage to the var/log/tradetracker.log file</comment>
+                        </debug_memory>
+                        <bypass_flat translate="label">
+                            <label>Bypass Flat Product Tables</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>24</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[It's not recommended to activate this option in production mode.]]></comment>
+                        </bypass_flat>
+                        <overwrite translate="label">
+                            <label>Overwrite Server Settings</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <tooltip>Only use this option if it's necessary to overwrite this setting because of your server memory limit or execution time.</tooltip>
+                        </overwrite>
+                        <memory_limit translate="label">
+                            <label>Memory Limit</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>26</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <overwrite>1</overwrite>
+                            </depends>
+                            <comment><![CDATA[This overwrites the maximum amount of memory in bytes that a script is allowed to allocate, eg: 1024M.]]></comment>
+                        </memory_limit>
+                        <max_execution_time translate="label">
+                            <label>Max Execution Time</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>27</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <overwrite>1</overwrite>
+                            </depends>
+                            <comment><![CDATA[This overwrites the maximum time in seconds a script is allowed to run before it is terminated by the parser, eg: 300 (for 5 minutes).]]></comment>
+                        </max_execution_time>
+                        <cron_heading translate="label">
+                            <label>Cron</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cron_heading>
+                        <cron translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>31</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cron>
+                        <frequency translate="label">
+                            <label>Frequency</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_cron_frequency</source_model>
+                            <backend_model>tradetracker/adminhtml_system_config_backend_tradetracker_cron</backend_model>
+                            <sort_order>32</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <cron>1</cron>
+                            </depends>
+                        </frequency>
+                        <time translate="label">
+                            <label>Start Time</label>
+                            <frontend_type>time</frontend_type>
+                            <sort_order>33</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <cron>1</cron>
+                            </depends>
+                        </time>
+                        <feeds_heading translate="label">
+                            <label>Generated Feeds</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_heading</frontend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </feeds_heading>
+                        <feeds_text translate="label">
+                            <label>Text</label>
+                            <frontend_model>tradetracker/adminhtml_system_config_form_field_feeds</frontend_model>
+                            <sort_order>61</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </feeds_text>
+                    </fields>
+                </generate>
+            </groups>
+        </tradetracker>
+    </sections>
+</config>

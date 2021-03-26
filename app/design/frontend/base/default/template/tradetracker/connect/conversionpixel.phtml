@@ -1,0 +1,57 @@
+<?php
+/*
+ *  TradeTracker
+ *
+ *  NOTICE OF LICENSE
+ *
+ *  This source file is subject to the Open Software License (OSL 3.0)
+ *  that is bundled with this package in the file LICENSE.txt.
+ *  It is also available through the world-wide-web at this URL:
+ *  http://opensource.org/licenses/osl-3.0.php
+ *  If you did not receive a copy of the license and are unable to
+ *  obtain it through the world-wide-web, please send an email
+ *  to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ *  @category    TradeTracker
+ *  @package     TradeTracker_Connect
+ *  @copyright   Copyright (c) 2021 TradeTracker (http://www.tradetracker.com)
+ *  @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+?>
+<?php $pixeldata = $this->getPixelData(); ?>
+<?php if (!empty($pixeldata['transactions'])) { ?>
+    <?php foreach ($pixeldata['transactions'] as $productID => $transaction) { ?>
+        <script type="text/javascript">
+            var ttConversionOptions = ttConversionOptions || [];
+            ttConversionOptions.push({
+                type: 'sales',
+                campaignID: '<?php echo $pixeldata['campaign_id']; ?>',
+                productID: '<?php echo $productID; ?>',
+                transactionID: '<?php echo $pixeldata['transaction_id']; ?>',
+                transactionAmount: '<?php echo number_format($transaction['amount'], 2, '.', ''); ?>',
+                quantity: '1',
+                email: '<?php echo $pixeldata['email']; ?>',
+                descrMerchant: '',
+                descrAffiliate: '',
+                currency: ''
+            });
+        </script>
+        <noscript>
+            <img src="//ts.tradetracker.net/?cid=<?php echo $pixeldata['campaign_id']; ?>&amp;pid=<?php echo $productID; ?>&amp;tid=<?php echo $pixeldata['transaction_id']; ?>&amp;tam=<?php echo number_format($transaction['amount'],
+                2, '.',
+                ''); ?>&amp;data=&amp;qty=1&amp;eml=<?php echo $pixeldata['email']; ?>&amp;descrMerchant=&amp;descrAffiliate=&amp;event=sales&amp;currency=<?php echo $pixeldata['currency']; ?>" alt=""/>
+        </noscript>
+    <?php } ?>
+    <script type="text/javascript">
+        (function (ttConversionOptions) {
+            var campaignID = 'campaignID' in ttConversionOptions ? ttConversionOptions.campaignID : ('length' in ttConversionOptions && ttConversionOptions.length ? ttConversionOptions[0].campaignID : null);
+            var tt = document.createElement('script');
+            tt.type = 'text/javascript';
+            tt.async = true;
+            tt.src = '//tm.tradetracker.net/conversion?s=' + encodeURIComponent(campaignID) + '&t=m';
+            var s = document.getElementsByTagName('script');
+            s = s[s.length - 1];
+            s.parentNode.insertBefore(tt, s);
+        })(ttConversionOptions);
+    </script>
+<?php } ?>

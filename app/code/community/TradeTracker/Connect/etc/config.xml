@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!--
+  ~  TradeTracker
+  ~
+  ~  NOTICE OF LICENSE
+  ~
+  ~  This source file is subject to the Open Software License (OSL 3.0)
+  ~  that is bundled with this package in the file LICENSE.txt.
+  ~  It is also available through the world-wide-web at this URL:
+  ~  http://opensource.org/licenses/osl-3.0.php
+  ~  If you did not receive a copy of the license and are unable to
+  ~  obtain it through the world-wide-web, please send an email
+  ~  to license@magentocommerce.com so we can send you a copy immediately.
+  ~
+  ~  @category    TradeTracker
+  ~  @package     TradeTracker_Connect
+  ~  @copyright   Copyright (c) 2021 TradeTracker (http://www.tradetracker.com)
+  ~  @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+  -->
+<config>
+    <modules>
+        <TradeTracker_Connect>
+            <version>1.0.0</version>
+        </TradeTracker_Connect>
+    </modules>
+    <global>
+        <helpers>
+            <tradetracker>
+                <class>TradeTracker_Connect_Helper</class>
+            </tradetracker>
+        </helpers>
+        <blocks>
+            <tradetracker>
+                <class>TradeTracker_Connect_Block</class>
+            </tradetracker>
+        </blocks>
+        <models>
+            <tradetracker>
+                <class>TradeTracker_Connect_Model</class>
+            </tradetracker>
+        </models>
+        <resources>
+            <tradetracker_setup>
+                <setup>
+                    <module>TradeTracker_Connect</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </tradetracker_setup>
+        </resources>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <tradetracker_connect>
+                    <file>tradetracker_connect.xml</file>
+                </tradetracker_connect>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <tradetracker_connect after="Mage_Adminhtml">TradeTracker_Connect_Adminhtml</tradetracker_connect>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <tradetracker_connect>
+                    <file>tradetracker_connect.xml</file>
+                </tradetracker_connect>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <tradetracker_connect>
+                    <files>
+                        <default>TradeTracker_Connect.csv</default>
+                    </files>
+                </tradetracker_connect>
+            </modules>
+        </translate>
+    </adminhtml>
+    <default>
+        <tradetracker>
+            <general>
+                <enabled>0</enabled>
+            </general>
+            <pixel>
+                <enabled>0</enabled>
+            </pixel>
+            <data>
+                <description>description</description>
+                <brand>manufacturer</brand>
+                <ean>sku</ean>
+                <size>size</size>
+                <color>color</color>
+                <material>material</material>
+                <gender>gender</gender>
+                <delivery>fixed</delivery>
+                <delivery_in>1-3 days</delivery_in>
+                <delivery_out>unknown</delivery_out>
+            </data>
+            <filter>
+                <status>0</status>
+                <visibility>4</visibility>
+            </filter>
+            <generate>
+                <enabled>1</enabled>
+                <filename>tradetracker.xml</filename>
+                <cron>0</cron>
+                <cron_schedule>0 0 * * *</cron_schedule>
+                <memory_limit>1024M</memory_limit>
+                <max_execution_time>300</max_execution_time>
+                <overwrite>0</overwrite>
+            </generate>
+        </tradetracker>
+    </default>
+    <crontab>
+        <jobs>
+            <tradetracker_generate>
+                <run>
+                    <model>tradetracker/observer::scheduledGenerateTradetracker</model>
+                </run>
+            </tradetracker_generate>
+        </jobs>
+    </crontab>
+</config>
